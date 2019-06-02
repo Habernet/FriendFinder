@@ -1,0 +1,23 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habernet/FriendFinder.git"
+  },
+  "author": "Patrick Haberern",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Habernet/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Habernet/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
