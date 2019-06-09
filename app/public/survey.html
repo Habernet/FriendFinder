@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Friend Finder Survey</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Survey Questions</h2>
-        <h3><strong>About You</strong></h3>
-        <h4>Name (required)</h4>
-        <input type="text" id="name" class="form-control" required="">
-        <h4>Link to photo (required)</h4>
-        <input type="text" id="photo" class="form-control" required="">
-        <!-- questions -->
-        <hr>
-        <h3><strong>Question 1</strong></h3>
-        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Choose...</option>
-          <option value="1">One (strongly disagree)</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-          <option value="4">Four</option>
-          <option value="5">Five (strongly agree)</option>
-        </select>
-        <h3><strong>Question 2</strong></h3>
-        <h4>Generally speaking, you rely more on your experience than your imagination..</h4>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect2">
-          <option selected>Choose...</option>
-          <option value="1">One (strongly disagree)</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-          <option value="4">Four</option>
-          <option value="5">Five (strongly agree)</option>
-        </select>
-        <h3><strong>Question 3</strong></h3>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect3">
-          <option selected>Choose...</option>
-          <option value="1">One (strongly disagree)</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-          <option value="4">Four</option>
-          <option value="5">Five (strongly agree)</option>
-        </select>
-        <!-- submit button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-            Submit</button>
 
-        <footer class="footer">
-                <div class="container">
-                    <p>
-                        <a href="/api/friends">API Friends List</a>
-                        |
-                        <a href="https://github.com/Habernet/FriendFinder">GitHub Repo</a>
-                    </p>
-                </div>
-            </footer>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Friend Finder Survey</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Survey Questions</h2>
+    <h3><strong>About You</strong></h3>
+    <h4>Name (required)</h4>
+    <input type="text" id="name" class="form-control" required="">
+    <h4>Link to photo (required)</h4>
+    <input type="text" id="photo" class="form-control" required="">
+    <!-- questions -->
+    <hr>
+    <h3><strong>Question 1</strong></h3>
+    <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+      <option selected>Choose...</option>
+      <option value="1">One (strongly disagree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (strongly agree)</option>
+    </select>
+    <h3><strong>Question 2</strong></h3>
+    <h4>Generally speaking, you rely more on your experience than your imagination..</h4>
+    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect2">
+      <option selected>Choose...</option>
+      <option value="1">One (strongly disagree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (strongly agree)</option>
+    </select>
+    <h3><strong>Question 3</strong></h3>
+    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect3">
+      <option selected>Choose...</option>
+      <option value="1">One (strongly disagree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (strongly agree)</option>
+    </select>
+    <!-- submit button -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
+        aria-hidden="true"></i>
+      Submit</button>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          <a href="/api/friends">API Friends List</a>
+          |
+          <a href="https://github.com/Habernet/FriendFinder">GitHub Repo</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="./assets/javascript/survey.js"></script>
 </body>
+
 </html>

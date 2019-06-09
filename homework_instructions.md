@@ -40,8 +40,8 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
 
 3. Your `htmlRoutes.js` file should include two routes:
 
-   * A GET Route to `/survey` which should display the survey page.
-   * A default, catch-all route that leads to `home.html` which displays the home page.
+   * A GET Route to `/survey` which should display the survey page. DONE
+   * A default, catch-all route that leads to `home.html` which displays the home page. DONE
 
 4. Your `apiRoutes.js` file should contain two routes:
 
