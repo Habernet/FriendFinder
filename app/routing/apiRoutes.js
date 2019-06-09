@@ -8,11 +8,9 @@ module.exports = (app) => {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
-
     // GET route for /api/friends
-    app.get('api/friends', (req, res) => {
-        console.log('I got here');
-        res.json(friends.friends);
+    app.get('/api/friends', (req, res) => {
+        res.json(friends);
         // We will send a response containing the JSON data stored in our friends.js
     });
 
