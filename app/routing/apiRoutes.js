@@ -1,5 +1,7 @@
 // Dependencies
-let friends = require("./data/friends");
+let friends = require("../data/friends");
+let bodyParser = require("body-parser");
+
 
 module.exports = (app) => {
     // Bring in this middleware to deal with post requests
@@ -8,13 +10,14 @@ module.exports = (app) => {
 
 
     // GET route for /api/friends
-    app.get('api/friends'), (req, res) => {
-        return res.json(friends.friends);
+    app.get('api/friends', (req, res) => {
+        console.log('I got here');
+        res.json(friends.friends);
         // We will send a response containing the JSON data stored in our friends.js
     });
 
     // POST route for /api/friends used to handle incoming survey resuls, also handles compatibility logic
-    app.post('/api/friends') , (req, res) => {
+    app.post('/api/friends', (req, res) => {
         // Capture the req.body
         let friend = req.body;
         console.log(friend);
