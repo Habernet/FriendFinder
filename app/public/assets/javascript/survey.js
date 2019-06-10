@@ -42,14 +42,14 @@ $('body').on('click', '#submit', (e) => {
     // If the user's data is valid...make the ajax call
 
     // Get the URL to send the ajax call , add the post route
-    let url  = window.location.origin + '/api/friends'
+    let url  = window.location.origin;
     if (user) {
         // make the call with the object with your ajax call
         $.ajax({
             type: 'POST',
-            url: url,
+            url: url + '/api/friends',
             data: user,
-        }
+        })
         .done(function (res) {
             console.log(res);
             // the api will send a response... the best match
@@ -59,7 +59,6 @@ $('body').on('click', '#submit', (e) => {
         .fail(function (){
             alert("Failed to post your data! Please try again");
             console.log('Ajax call failed to post data');
-        })
-        );
+        });
     };
 });
