@@ -1,5 +1,3 @@
-// When the user clicks the button we will save the inputs and use it to make an ajax put request to /api/friends
-
 let yieldData = () => {
     // grab everything off the forms on the page
     // make sure the input is valid
@@ -22,12 +20,12 @@ let yieldData = () => {
     // We have all of the data, now we will check to make sure it is valid for passing along
     // Check to make sure the user has entered the first two
     if (user.name === '' || user.photo === '') {
-        return false;
+        return false
     };
     // Check to make sure that none of the scores are 0
     for (let i = 0; i < user.scores.length; i++) {
         if (user.scores[i] === 0) {
-            return false;
+            return false
         };
     };
 
