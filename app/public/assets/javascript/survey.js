@@ -7,8 +7,8 @@ let yieldData = () => {
     //Initialize the empty object (this will be posted)
     let user = {};
     // Grab the name and photo values
-    user.name = $('#name').trim().val();
-    user.photo = $('#photo').trim().val();
+    user.name = $('#name').val().trim();
+    user.photo = $('#photo').val().trim();
     // Create an empty array that will hold the user's scores
     user.scores = [];
 
@@ -40,19 +40,21 @@ $('body').on('click', '#submit', (e) => {
     // If the user's data is valid...make the ajax call
 
     // Get the URL to send the ajax call , add the post route
-    let url  = window.location.origin;
+    let url  = window.location.origin + '/api/friends';
     if (user) {
         // make the call with the object with your ajax call
         $.ajax({
             type: 'POST',
-            url: url + '/api/friends',
+            url: url,
             data: user,
         })
         .done(function (res) {
             console.log(res);
-            // the api will send a response... the best match
-            // we will take that response, parse it out and place it in a modal on the page.
-
+            // Append the name and the photo url
+            $('#best-name').append($('<h1>').text(res.name));
+            $('#best-photo').append($('<img>').attr('src', res.photo));
+            // Show the modal
+            $('#best-match').show();
         })
         .fail(function (){
             alert("Failed to post your data! Please try again");
