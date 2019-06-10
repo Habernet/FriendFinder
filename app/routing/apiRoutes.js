@@ -22,6 +22,7 @@ module.exports = (app) => {
         // Do some logic to determine which friend is most compatible, send it back in the res.body
         // To do this logic you will have to bring in the entire array from friends and compare with a function...the function should return the best match and then we send that in a res.body
         // The client side will then take that data and parse it to a modal per the instructions.
+        res.send(friend);
 
     });
 };
