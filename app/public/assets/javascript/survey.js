@@ -51,10 +51,10 @@ $('body').on('click', '#submit', (e) => {
         .done(function (res) {
             console.log(res);
             // Append the name and the photo url
-            $('#best-name').append($('<h1>').text(res.name));
-            $('#best-photo').append($('<img>').attr('src', res.photo));
+            $('#best-name').append($('<h1>').text("Your best friend " + res.name + " awaits!"));
+            $('#best-picture').append($('<img>').attr('src', res.photo));
             // Show the modal
-            $('#best-match').show();
+            $('#best-friend').modal('toggle');
         })
         .fail(function (){
             alert("Failed to post your data! Please try again");
