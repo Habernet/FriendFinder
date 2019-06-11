@@ -17,12 +17,42 @@ module.exports = (app) => {
     // POST route for /api/friends used to handle incoming survey resuls, also handles compatibility logic
     app.post('/api/friends', (req, res) => {
         // Capture the req.body
-        let friend = req.body;
-        console.log(friend);
+        let user = req.body;
+        // console.log(user);
+        // console.log(friends);
         // Do some logic to determine which friend is most compatible, send it back in the res.body
-        // To do this logic you will have to bring in the entire array from friends and compare with a function...the function should return the best match and then we send that in a res.body
-        // The client side will then take that data and parse it to a modal per the instructions.
-        res.send(friend);
+
+
+        // We get back an array of objects from friends.js
+        // We don't care about the other parts of the objects...just the scores.
+
+        // Get the scores of the user, create an array to hold all of the friends scores.
+        let userScores = user.scores,
+            scores = [];
+
+        // For every question in the user scores..compare it to each friend's corresponding answer.
+        // Loop over the friends array to do this.
+        friends.forEach(function (scores) {
+            // Get the absolute value difference of each answer and add it to a total
+
+            // Push each totaldifference value (represents the total difference of each friend)
+            // to the scores array. Now we have an array of values that shows how different the scores were 
+
+            // Send the user's data to the database
+
+
+        });
+
+
+
+        friends.push(user);
+
+        // Find the smallest value in the total difference array, get the index of it..
+        // using the index of ...respond with the json of that element.
+        // This is returning the best match.
+
+
+        res.send(user);
 
     });
 };

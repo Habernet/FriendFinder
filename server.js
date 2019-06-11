@@ -12,7 +12,7 @@ let PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//Allows for serving of static files hosted in the public folder
+//Allows for serving of static files hosted in the public folder THIS HAS TO COME BEFORE THE ROUTE DECLARATIONS
 app.use(express.static(path.join(__dirname, "./app/public")));
 
 // Require the routes since we only need to define the routes in the other file..we don't need to store this in a variable, we can just pass it our instance of express.

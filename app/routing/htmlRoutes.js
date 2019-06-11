@@ -10,6 +10,6 @@ module.exports = (app) => {
     
     // Defaul catch all route that serves the home.html page
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 };
