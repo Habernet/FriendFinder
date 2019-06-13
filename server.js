@@ -19,8 +19,6 @@ app.use(express.static(path.join(__dirname, "./app/public")));
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-
-
 // Kick off the express server
 app.listen(PORT, () => {
     console.log("Server is now listening at port: " + PORT);
