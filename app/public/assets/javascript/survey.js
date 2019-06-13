@@ -59,8 +59,7 @@ $('body').on('click', '#submit', (e) => {
             $('#best-friend').modal('toggle');
         })
         .fail(function (){
-            alert("Failed to post your data! Please try again");
-            console.log('Ajax call failed to post data');
+            alert("Please make sure you filled out all forms!");
         });
     };
 });
