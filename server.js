@@ -1,7 +1,6 @@
 // Dependencies
 let express = require("express");
 let path = require("path");
-let bodyParser = require("body-parser");
 
 // Create the App
 let app = express();
@@ -9,9 +8,8 @@ let app = express();
 let PORT = process.env.PORT || 3000;
 
 // Middle ware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 //Allows for serving of static files hosted in the public folder THIS HAS TO COME BEFORE THE ROUTE DECLARATIONS
 app.use(express.static(path.join(__dirname, "./app/public")));
 
