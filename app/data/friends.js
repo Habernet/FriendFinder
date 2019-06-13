@@ -80,6 +80,38 @@ let friends = [
             4,
             1
           ]
+      },
+      {
+        "name":"Andy Bernard",
+        "photo":"https://upload.wikimedia.org/wikipedia/en/8/84/Andy_Bernard_photoshot.jpg",
+        "scores":[
+            1,
+            1,
+            1,
+            4,
+            4,
+            5,
+            5,
+            5,
+            4,
+            1
+          ]
+      },
+      {
+        "name":"Angela Martin",
+        "photo":"https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Angela_Martin.jpg/230px-Angela_Martin.jpg",
+        "scores":[
+            1,
+            1,
+            1,
+            4,
+            4,
+            5,
+            5,
+            5,
+            4,
+            1
+          ]
       }
 ];
 

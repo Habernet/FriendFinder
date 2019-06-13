@@ -13,7 +13,7 @@ let yieldData = () => {
     user.scores = [];
 
     // Using jquery...loop through each of the forms on the page and yield their data...pushing it the the scores array
-    $('.custom-select').each(function (index) {
+    $('.custom-select').each(function () {
         user.scores.push($(this).val());
     });
 
@@ -49,7 +49,9 @@ $('body').on('click', '#submit', (e) => {
             data: user,
         })
         .done(function (res) {
-            console.log(res);
+            // Clear the modal
+            $('#best-name').empty();
+            $('#best-picture').empty();
             // Append the name and the photo url
             $('#best-name').append($('<h1>').text("Your best friend " + res.name + " awaits!"));
             $('#best-picture').append($('<img>').attr('src', res.photo));

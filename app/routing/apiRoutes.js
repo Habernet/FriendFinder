@@ -18,10 +18,6 @@ module.exports = (app) => {
     app.post('/api/friends', (req, res) => {
         // Capture the req.body
         let user = req.body;
-        // console.log(user);
-        // console.log(friends);
-        // Do some logic to determine which friend is most compatible, send it back in the res.body
-
 
         // We get back an array of objects from friends.js
         // We don't care about the other parts of the objects...just the scores.
@@ -31,28 +27,42 @@ module.exports = (app) => {
             scores = [];
 
         // For every question in the user scores..compare it to each friend's corresponding answer.
-        // Loop over the friends array to do this.
-        friends.forEach(function (scores) {
-            // Get the absolute value difference of each answer and add it to a total
-
-            // Push each totaldifference value (represents the total difference of each friend)
-            // to the scores array. Now we have an array of values that shows how different the scores were 
-
-            // Send the user's data to the database
+        // Use two for each's here.
+        // You will push the difference to scores array. Because you are going through the arrays in this matter..the positions in the array correspond with the actual total difference of each friend.
 
 
+        // For every friend...
+        friends.forEach(function (element) {
+            // Get the difference of each answer and add it to a total
+            // Here is the total, it has to stay here in the outer loop
+            let totalDifference = 0;
+
+            // For every friend...compare each userscore to the current friend's score
+            userScores.forEach(function (score) {
+                // Bring in the friend's corresponding score
+                let friendScore = element.scores[score];
+                // Get the difference in scores
+                totalDifference += score - friendScore;
+            });
+
+            scores.push(Math.abs(totalDifference));
         });
 
 
 
+        // Send the user's data to the database
         friends.push(user);
 
-        // Find the smallest value in the total difference array, get the index of it..
-        // using the index of ...respond with the json of that element.
-        // This is returning the best match.
+        // Because the scores array corresponds in position to the friends array...their scores match up.
+        // We can now find the minimum value...meaning the total score difference was the least (best match),
+        // and we can use that index to index into the friends array and retrieve YOUR BEST FRAN.
 
-
-        res.send(user);
+        // Find the min value of the scores array
+        // Using the min value...find the index of it in the array
+        let bestIndex = scores.indexOf(Math.min.apply(null, scores));
+    
+        // Using that index... index into the best friends and return the json to the front end
+        res.json(friends[bestIndex]);
 
     });
 };
