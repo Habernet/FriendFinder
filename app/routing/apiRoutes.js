@@ -22,6 +22,8 @@ module.exports = (app) => {
         let userScores = user.scores,
             differenceScores = [];
 
+        console.log(userScores);
+
         // For every question in the user scores..compare it to each friend's corresponding answer.
         // Push the difference to scores array. Because you are going through the arrays in this matter..the position of each total difference corresponds with the position of the friend who it represents.
 
@@ -31,15 +33,20 @@ module.exports = (app) => {
             let totalDifference = 0;
 
             // For every friend...compare each userscore to the current friend's score
-            userScores.forEach(function (score) {
+            userScores.forEach(function (score, index) {
                 // Bring in the friend's corresponding score
-                let friendScore = element.scores[score];
+                score = Number(score);
+                let friendScore = Number(element.scores[index]);
+                console.log('Friends ' + friendScore);
                 // Get the difference in scores
                 totalDifference += score - friendScore;
+                console.log('Total ' + totalDifference);
             });
 
             // Push the total difference (in absolute value form) to the differenceScores array
             differenceScores.push(Math.abs(totalDifference));
+            console.log ('THIS FRIEND: ' + totalDifference);
+            console.log('\n' + '------------------------------------------------------------')
         });
 
 
